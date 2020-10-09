@@ -19,7 +19,9 @@
   "homepage": "https://github.com/ruicky/jd_sign_bot#readme",
   "dependencies": {
     "download": "^8.0.0",
+    "got": "^11.7.0",
     "request": "^2.88.2",
-    "request-promise": "^4.2.5"
+    "request-promise": "^4.2.5",
+    "tough-cookie": "^4.0.0"
   }
 }
