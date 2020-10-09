@@ -8,19 +8,19 @@ const rp = require('request-promise')
 const download = require('download')
 
 // 公共变量
-const KEY = process.env.JD_COOKIE
+const KEY = process.env.KKMH_COOKIE
 const serverJ = process.env.PUSH_KEY
 
 async function downFile () {
     // const url = 'https://cdn.jsdelivr.net/gh/NobyDa/Script@master/JD-DailyBonus/JD_DailyBonus.js'
-    const url = 'https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js'
+    const url = 'https://raw.githubusercontent.com/NobyDa/Script/master/KuaiKan-DailyBonus/KKMH.js'
     await download(url, './')
 }
 
 async function changeFiele () {
-   let content = await fs.readFileSync('./JD_DailyBonus.js', 'utf8')
-   content = content.replace(/var Key = ''/, `var Key = '${KEY}'`)
-   await fs.writeFileSync( './JD_DailyBonus.js', content, 'utf8')
+   let content = await fs.readFileSync('./KKMH.js', 'utf8')
+   content = content.replace(/var cookie =''/, `var cookie ='${KEY}'`)
+   await fs.writeFileSync( './KKMH.js', content, 'utf8')
 }
 
 async function sendNotify (text,desp) {
@@ -58,7 +58,7 @@ async function start() {
     if (fs.existsSync(path)) {
       content = fs.readFileSync(path, "utf8");
     }
-    await sendNotify("京东签到-" + new Date().toLocaleDateString(), content);
+    await sendNotify("快看漫画签到-" + new Date().toLocaleDateString(), content);
     console.log('发送结果完毕')
   }
 }

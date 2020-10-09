@@ -1,11 +1,11 @@
-name: Github JD-sign bot
+name: 快看漫画签到
 
 on:
     push:
         branches:
             - master
     schedule:
-        - cron: '5 16 * * *'
+        - cron: '20 22 * * *'
 jobs:
     build:
         runs-on: ubuntu-latest
