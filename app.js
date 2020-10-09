@@ -19,7 +19,7 @@ async function downFile () {
 
 async function changeFiele () {
    let content = await fs.readFileSync('./KKMH.js', 'utf8')
-   content = content.replace(/var cookie =''/, `var cookie ='${KEY}'`)
+   content = content.replace(/var cookie = ''/, `var cookie = '${KEY}'`)
    await fs.writeFileSync( './KKMH.js', content, 'utf8')
 }
 
@@ -59,6 +59,7 @@ async function start() {
       content = fs.readFileSync(path, "utf8");
     }
     await sendNotify("快看漫画签到-" + new Date().toLocaleDateString(), content);
+    console.log(content)
     console.log('发送结果完毕')
   }
 }
