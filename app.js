@@ -18,7 +18,7 @@ async function downFile() {
   await download(url, "./");
 }
 
-async function changeFiele() {
+async function changeFile() {
   let content = await fs.readFileSync("./KKMH.js", "utf8");
   content = content.replace(/var cookie = ''/, `var cookie = '${KEY}'`);
   await fs.writeFileSync("./KKMH.js", content, "utf8");
